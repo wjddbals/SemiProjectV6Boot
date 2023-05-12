@@ -14,12 +14,12 @@ public class IndexControlller {
 
     @GetMapping("/intro")
     public String intro() {
-        return "intro.tiles";
+        return "intro";
     }
 
     @GetMapping("/admin")
     public String admin() {
-        return "admin.tiles";
+        return "admin";
     }
 
 }

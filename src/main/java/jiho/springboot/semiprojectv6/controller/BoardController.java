@@ -18,7 +18,7 @@ public class BoardController {
     @GetMapping("/list")
     public ModelAndView list(int cpg) {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("board/list.tiles");
+        mv.setViewName("board/list");
 
         mv.addObject("bdlist", bdsrv.readBoard(cpg));
         mv.addObject("cpg", cpg);
@@ -36,16 +36,16 @@ public class BoardController {
         mv.addObject("cpg", cpg);
         mv.addObject("stpg", ((cpg - 1) / 10) * 10 + 1);
         mv.addObject("cntpg", bdsrv.countBoard(ftype,fkey));
-        mv.setViewName("board/list.tiles");
+        mv.setViewName("board/list");
         return  mv;
     }
     @GetMapping("/write")
     public String write(){
-        return "board/write.tiles";
+        return "board/write";
     }
     @PostMapping("/write")
     public String writeok(Board bd){
-        String viewPage="error.tiles";
+        String viewPage="error";
         if(bdsrv.newBoard(bd))
             viewPage="redirect:/board/list?cpg=1";
 
@@ -56,7 +56,7 @@ public class BoardController {
 
         ModelAndView mv=new ModelAndView();
         mv.addObject("bd",bdsrv.readOneBoard(bno));
-        mv.setViewName("board/view.tiles");
+        mv.setViewName("board/view");
 
         return mv;
     }

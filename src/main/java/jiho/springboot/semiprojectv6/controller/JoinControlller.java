@@ -19,18 +19,18 @@ public class JoinControlller {
 
     @GetMapping("/agree")
     public String agree() {
-        return "join/agree.tiles";
+        return "join/agree";
     }
 
     @GetMapping("/checkme")
     public String checkme() {
-        return "join/checkme.tiles";
+        return "join/checkme";
     }
 
     @PostMapping("/joinme")
     public ModelAndView joinme(Member1 mb) {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("join/joinme.tiles");
+        mv.setViewName("join/joinme");
         mv.addObject("mb", mb);
 
         return mv;
@@ -38,10 +38,10 @@ public class JoinControlller {
 
     @PostMapping("/joinok")
     public String joinok(Member1 m, String grecapcha) {
-        String view ="error.tiles";
+        String view ="error";
 
        if (jnsrv.newMember(m))
-           view="join/joinok.tiles";
+           view="join/joinok";
         return view;
     }
 
