@@ -1,7 +1,7 @@
-package jiho.springboot.semiprojectv6boot.service;
+package jiho.springboot.semiprojectv6.service;
 
-import jiho.springboot.semiprojectv5.dao.BoardDAO;
-import jiho.springboot.semiprojectv5.model.Board;
+import jiho.springboot.semiprojectv6.dao.BoardDAO;
+import jiho.springboot.semiprojectv6.model.Board;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

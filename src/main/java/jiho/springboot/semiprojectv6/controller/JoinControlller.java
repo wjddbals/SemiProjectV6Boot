@@ -1,12 +1,12 @@
-package jiho.springboot.semiprojectv6boot.controller;
+package jiho.springboot.semiprojectv6.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import jiho.springboot.semiprojectv5.model.Member1;
-import jiho.springboot.semiprojectv5.service.JoinService;
+import jiho.springboot.semiprojectv6.model.Member1;
+import jiho.springboot.semiprojectv6.service.JoinService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

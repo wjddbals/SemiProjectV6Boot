@@ -1,7 +1,7 @@
-package jiho.springboot.semiprojectv6boot.controller;
+package jiho.springboot.semiprojectv6.controller;
 
-import jiho.springboot.semiprojectv5.model.Board;
-import jiho.springboot.semiprojectv5.service.BoardService;
+import jiho.springboot.semiprojectv6.model.Board;
+import jiho.springboot.semiprojectv6.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

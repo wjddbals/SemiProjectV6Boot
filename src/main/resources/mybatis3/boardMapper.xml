@@ -4,7 +4,7 @@
 
     <select id="selectBoard" statementType="PREPARED"
             parameterType="int"
-            resultType="jiho.springboot.semiprojectv5.model.Board">
+            resultType="jiho.springboot.semiprojectv6.model.Board">
         select bno, title, userid, thumbs, views, regdate from board
         order by bno desc limit #{stbno}, 25
     </select>
@@ -12,7 +12,7 @@
     <!-- 동적 질의문으로 검색기능 구현 -->
     <!-- 단, 컬럼명이나 테이블명에는 #{}가 아닌 ${}를 사용! 컬럼명은 변수로 담아서 쓸수 없어서 #이아니라 $로 시작해야 한다 -->
     <select id="selectFindBoard" statementType="PREPARED" parameterType="map"
-            resultType="jiho.springboot.semiprojectv5.model.Board">
+            resultType="jiho.springboot.semiprojectv6.model.Board">
         select bno, title, userid, thumbs, views, regdate from board
 
         <if test="ftype != 'titcont'">
@@ -41,13 +41,13 @@
     </select>
 
     <insert id="insertBoard" statementType="PREPARED"
-            parameterType="jiho.springboot.semiprojectv5.model.Board">
+            parameterType="jiho.springboot.semiprojectv6.model.Board">
         insert into board (title,userid,content)
         values (#{title},#{userid},#{content});
     </insert>
 
     <select id="selectOneBoard" statementType="PREPARED" parameterType="String"
-            resultType="jiho.springboot.semiprojectv5.model.Board">
+            resultType="jiho.springboot.semiprojectv6.model.Board">
         select *from board
             where bno=#{bno}
 

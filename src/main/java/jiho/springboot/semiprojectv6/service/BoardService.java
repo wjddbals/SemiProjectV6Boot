@@ -1,7 +1,7 @@
-package jiho.springboot.semiprojectv6boot.service;
+package jiho.springboot.semiprojectv6.service;
 
 
-import jiho.springboot.semiprojectv5.model.Board;
+import jiho.springboot.semiprojectv6.model.Board;
 
 import java.util.List;
 

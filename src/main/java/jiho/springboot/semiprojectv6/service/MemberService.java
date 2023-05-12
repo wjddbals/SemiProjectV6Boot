@@ -1,6 +1,6 @@
-package jiho.springboot.semiprojectv6boot.service;
+package jiho.springboot.semiprojectv6.service;
 
-import jiho.springboot.semiprojectv5.model.Member1;
+import jiho.springboot.semiprojectv6.model.Member1;
 
 import javax.servlet.http.HttpSession;
 

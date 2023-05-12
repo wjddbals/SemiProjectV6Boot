@@ -1,6 +1,6 @@
-package jiho.springboot.semiprojectv6boot.dao;
+package jiho.springboot.semiprojectv6.dao;
 
-import jiho.springboot.semiprojectv5.model.Member1;
+import jiho.springboot.semiprojectv6.model.Member1;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

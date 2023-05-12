@@ -4,7 +4,7 @@
 <mapper namespace="member">
 
     <select id="selectLogin" statementType="PREPARED"
-            parameterType="jiho.springboot.semiprojectv5.model.Member1"
+            parameterType="jiho.springboot.semiprojectv6.model.Member1"
             resultType= "int" >
         select count(userid) cnt from member1
 

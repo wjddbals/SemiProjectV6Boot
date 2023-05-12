@@ -1,4 +1,4 @@
-package jiho.springboot.semiprojectv6boot.model;
+package jiho.springboot.semiprojectv6.model;
 
 import lombok.Data;
 

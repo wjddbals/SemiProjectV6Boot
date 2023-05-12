@@ -1,6 +1,6 @@
-package jiho.springboot.semiprojectv6boot.dao;
+package jiho.springboot.semiprojectv6.dao;
 
-import jiho.springboot.semiprojectv5.model.Board;
+import jiho.springboot.semiprojectv6.model.Board;
 
 import java.util.List;
 import java.util.Map;
