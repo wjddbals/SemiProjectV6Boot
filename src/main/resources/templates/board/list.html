@@ -5,7 +5,9 @@
 
 <th:block layout:fragment="content">
 
-    <div id="main">
+    <div id="main" th:with="pglink=${'/board/list?cpg='}">
+
+
         <div class="mt-5">
             <i class="fa-solid fa-pen-to-square fa-2xl"> 게시판 </i>
             <hr>
@@ -24,7 +26,7 @@
 
                 <div class="col-4">
                     <input type="text" class="form-control col-2" id="findkey"
-                           value="&nbsp;"></div>
+                           th:value="${param.fkey}"></div>
 
                 <div class="col-3">
                     <button type="button" class="btn btn-light" id="findbtn">
@@ -80,23 +82,35 @@
                 <nav>
                     <ul class="pagination justify-content-center">
 
-                        <li class="page-item">
-                        <a class="page-link" href="${pglink}1">처음</a></li>
+
+                      <th:block th:if="${cpg gt 1}">
+                          <li class="page-item">
+                        <a class="page-link" th:href="|${pglink}1|">처음</a>
+                      </th:block>
 
 
+                    <!--    <th:block th:if="${cpg-1 gt 0}"><li class="page-item "></th:block>
+                        <th:block th:unless="${cpg-1 lt 0}"><li class="page-item disabled"></th:block> -->
+                        <li th:class="${ (cpg - 1 gt 0) ? 'page-item':'page-item disabled'}">
+                        <a class="page-link" th:href="|${pglink}${cpg-1}|">이전</a></li>
 
-                        <li class="page-item">
-                        <a class="page-link" href="${pglink}${cpg-1}">이전</a></li>
+
+                        <th:block th:each="i:${#numbers.sequence(stpg,stpg+9)}">
+                            <th:block th:if="${i le cntpg}">
+                            <li th:class="${(i ne cpg)?'page-item':'page-item active'}">
+                                <a class="page-link" th:href="|${pglink}${i}|" th:text="${i}"></a>
+                            </li>
+                            </th:block>
+                        </th:block>
 
 
+                        <li th:class="${(cpg + 1 lt cntpg)?'page-item':'page-item disabled'}">
+                        <a class="page-link" th:href="|${pglink}${cpg+1}|">다음</a></li>
 
-
-                        <li class="page-item">
-                        <a class="page-link" href="${pglink}${cpg+1}">다음</a></li>
-
-                        <li class="page-item">
-                        <a class="page-link" href="${pglink}${cntpg}">끝</a></li>
-
+                        <th:block th:if="${cpg  lt cntcpg}">
+                            <li class="page-item">
+                                <a class="page-link" th:href="|${pglink}${cntpg}|">끝</a></li>
+                        </th:block>
                     </ul>
                 </nav>
             </div>
