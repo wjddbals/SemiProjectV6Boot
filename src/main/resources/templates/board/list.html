@@ -60,12 +60,14 @@
                         <th>1345</th></tr>
 
 
-                    <tr><td>&nbsp;</td>
-                        <td><a href="/board/view?bno=${bd.bno}"> &nbsp;</a></td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td></tr>
+
+                    <tr th:each="bd:${bdlist}">
+                        <td th:text="${bd.bno}">&nbsp;</td>
+                        <td><a th:href="|/board/view?bno=${bd.bno}|" th:text="${bd.title}"> &nbsp;</a></td>
+                        <td th:text="${bd.userid}">&nbsp;</td>
+                        <td th:text="${#strings.substring(bd.regdate,0,10)}">&nbsp;</td>
+                        <td th:text="${bd.thumbs}">&nbsp;</td>
+                        <td th:text="${bd.views}">&nbsp;</td></tr>
 
 
                     </tbody>
@@ -101,6 +103,7 @@
         </div>
 
     </div>
+    <script src="/assets/js/board.js"></script>
 </th:block>
 
 
